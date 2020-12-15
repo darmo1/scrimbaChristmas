@@ -11,7 +11,8 @@ function arrayMaximalAdjacentDifference(nums) {
     return Math.max(...absoluteArray)
 }
 
-// This feels very complicated, if you change it to this, it will resolve to the same:
+// You're doing too many things here, if you change it to this, it will resolve to the same:
+// (Also, work on naming.)
 // function arrayMaximalAdjacentDifference(nums) {
 //     const differences =[]
 //     for(let i = 0; i < (nums.length-1) ; i++){
@@ -23,6 +24,7 @@ function arrayMaximalAdjacentDifference(nums) {
 
 
 // My solution:
+
 arrayMaximalAdjacentDifferenceArne = (nums) 
   => nums.reduce((max, current, i) 
     => Math.abs(current - nums[i+1]) > max ? max = Math.abs(current - nums[i+1]) : max,0)
