@@ -26,4 +26,10 @@ function centuryFromYear(num) {
     }
 }
 
-console.log(centuryFromYear(1707))
+// This solution hurts my head.
+// Here's my solution:
+const centuryFromYearArne = (num) => Math.floor((num-1)/100 + 1)
+
+
+console.log(centuryFromYear(1800))
+console.log(centuryFromYearArne(1800))

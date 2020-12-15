@@ -21,4 +21,17 @@ function countVowelConsonant(str) {
     
   }
 
+  // I do think this is a bit too complicated.
+  // My solution:
+
+  function countVowelConsonantArne(str) {
+    const vowels = ["a","e","i","o","u"]
+    return str.split('').reduce((sum, current) => vowels.includes(current) ? sum + 1 : sum + 2, 0)
+  }
+
+  // or in one line:
+  // countVowelConsonant = (str) => str.split('').reduce((sum, current) => ["a","e","i","o","u"].includes(current) ? sum + 1 : sum + 2, 0)
+
+
   countVowelConsonant('abcde');
+  countVowelConsonantArne('abcde');
