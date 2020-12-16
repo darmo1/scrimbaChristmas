@@ -22,7 +22,18 @@ function sumOddFibonacciNumbers(num) {
 }
   return result
 }
- console.log(sumOddFibonacciNumbers(4000000)) ;
+
+// I think this is very difficult to read, the naming of the variables makes it very difficult.
+
+// My solution: (A recursive function)
+function sumOddFibonacciNumbersArne(num, fibs = [1,1]) {
+  if (fibs[0] + fibs[1] >= num) return fibs.reduce(((sum, number) => number % 2 === 1 ? sum + number : sum), 0)
+  fibs.unshift(fibs[0] + fibs[1])
+  return sumOddFibonacciNumbers(num, fibs)
+}
+
+console.log(sumOddFibonacciNumbers(4000000))
+console.log(sumOddFibonacciNumbersArne(4000000))
 
 
 
