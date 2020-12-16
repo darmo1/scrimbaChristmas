@@ -5,6 +5,7 @@ function centuryFromYear(num) {
     return century = Math.ceil(num/100)
 } 
 
+
     
 
 console.log(centuryFromYear(1905));
