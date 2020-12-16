@@ -11,4 +11,16 @@ function depositProfit(deposit, rate,threshold){
     return years
 }
 
+// Looks good, but would also here think about the spacing.
+
+// My solution:
+function depositProfitArne(deposit, rate, threshold) {
+    let year = 0
+    while (deposit <= threshold) {
+        year++
+        deposit *= 1 + rate/100
+    }
+    return year
+}
+
 console.log(depositProfit(100,20,170));
