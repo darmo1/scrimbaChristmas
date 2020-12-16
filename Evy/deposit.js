@@ -7,4 +7,6 @@ function depositProfit(deposit, rate, threshold) {
 	return counter
 }
 
+// Looks good.
+
 console.log(depositProfit(100, 20, 170))
