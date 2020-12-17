@@ -6,5 +6,14 @@ function chunkyMonkey(values, size) {
 // It will not work for an array of more elements than 2x size.
 // Try again
 
-console.log(chunkyMonkey(['a', 'b', 'c', 'd'], 2))
-console.log(chunkyMonkey(['a', 'b', 'c', 'd', 'e', 'f'], 2))
+const chunkyMonkeyNew = (values, size) =>
+	Array(Math.ceil(values.length / size))
+		.fill('')
+		.reduce((prevValues, current, index) => {
+			return [...prevValues, [...values].splice(index * size, size)]
+		}, [])
+
+console.log(chunkyMonkeyNew(['a', 'b', 'c', 'd'], 2))
+console.log(chunkyMonkeyNew(['a', 'b', 'c', 'd', 'e', 'f'], 2))
+console.log(chunkyMonkeyNew(['a', 'b', 'c', 'd', 'e', 'f'], 4))
+console.log(chunkyMonkeyNew(['a', 'b', 'c', 'd', 'e', 'f', 'g'], 2))
